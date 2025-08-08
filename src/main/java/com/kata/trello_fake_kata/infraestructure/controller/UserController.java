@@ -1,4 +1,5 @@
 package com.kata.trello_fake_kata.infraestructure.controller;
+import com.kata.trello_fake_kata.domain.dto.CreateUserDTO;
 import com.kata.trello_fake_kata.domain.dto.PagedResponse;
 import com.kata.trello_fake_kata.domain.model.User;
 import com.kata.trello_fake_kata.domain.service.IUserService;
@@ -32,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
+    public User createUser(@RequestBody CreateUserDTO user) {
         return userService.createUser(user);
     }
 

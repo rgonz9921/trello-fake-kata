@@ -1,5 +1,7 @@
 package com.kata.trello_fake_kata.domain.service;
+import com.kata.trello_fake_kata.domain.dto.CreateUserDTO;
 import com.kata.trello_fake_kata.domain.dto.PagedResponse;
+import com.kata.trello_fake_kata.domain.model.TypeRoleUser;
 import com.kata.trello_fake_kata.domain.model.User;
 import com.kata.trello_fake_kata.infraestructure.persistence.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,8 +51,12 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User createUser(User user) {
-        String hashedPassword = passwordEncoder.encode(user.getPassword());
+    public User createUser(CreateUserDTO dto) {
+        User user = new User();
+        user.setName(dto.getName());
+        user.setEmail(dto.getEmail());
+        user.setRole(dto.getRole() != null ? dto.getRole() : TypeRoleUser.USER);
+        String hashedPassword = passwordEncoder.encode(dto.getPassword());
         user.setPassword(hashedPassword);
         return userRepository.save(user);
     }

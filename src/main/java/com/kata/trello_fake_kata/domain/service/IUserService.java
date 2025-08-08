@@ -1,4 +1,5 @@
 package com.kata.trello_fake_kata.domain.service;
+import com.kata.trello_fake_kata.domain.dto.CreateUserDTO;
 import com.kata.trello_fake_kata.domain.dto.PagedResponse;
 import com.kata.trello_fake_kata.domain.model.User;
 
@@ -11,7 +12,7 @@ public interface IUserService {
 
     Optional<User> getUserByEmail(String email);
 
-    User createUser(User user);
+    User createUser(CreateUserDTO user);
 
     User updateUser(String id, User updateUser);
 
