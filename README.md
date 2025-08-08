@@ -1,1 +1,2 @@
 # trello-fake-kata
+.
