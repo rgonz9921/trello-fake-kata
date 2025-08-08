@@ -1,6 +1,5 @@
 package com.kata.trello_fake_kata.domain.service;
 import com.kata.trello_fake_kata.domain.dto.PagedResponse;
-import com.kata.trello_fake_kata.domain.dto.UserDto;
 import com.kata.trello_fake_kata.domain.model.User;
 
 import java.util.Optional;

@@ -37,8 +37,6 @@ public class User {
 
     private TypeRoleUser role;
 
-    private List<String> reservations;
-
     public String get_id() {
         return _id;
     }
@@ -77,13 +75,5 @@ public class User {
 
     public void setRole(TypeRoleUser role) {
         this.role = role;
-    }
-
-    public List<String> getReservations() {
-        return reservations;
-    }
-
-    public void setReservations(List<String> reservations) {
-        this.reservations = reservations;
     }
 }

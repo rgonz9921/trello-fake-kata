@@ -62,7 +62,6 @@ public class UserServiceImpl implements IUserService {
                     user.setName(updateUser.getName());
                     user.setEmail(updateUser.getEmail());
                     user.setPassword(updateUser.getPassword());
-                    user.setReservations(updateUser.getReservations());
                     user.setRole(updateUser.getRole());
                     return userRepository.save(user);
                 }).orElseGet(() -> {
