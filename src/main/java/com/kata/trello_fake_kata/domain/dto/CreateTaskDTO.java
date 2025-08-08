@@ -2,50 +2,15 @@ package com.kata.trello_fake_kata.domain.dto;
 
 import java.time.LocalDate;
 
-public class TaskResponseDTO {
-    private String id;
+public class CreateTaskDTO {
     private String title;
     private String description;
     private String priority;
-    private String assigneeName;
-
-    private String sprintName;
+    private String assignee;
     private LocalDate deliveryDate;
     private LocalDate dueDate;
     private String sprint;
     private String status;
-
-    public TaskResponseDTO(String id, String title, String description, String priority,
-                           String assigneeName, String sprintName,
-                           LocalDate deliveryDate, LocalDate dueDate,
-                           String sprint, String status) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.priority = priority;
-        this.assigneeName = assigneeName;
-        this.sprintName = sprintName;
-        this.deliveryDate = deliveryDate;
-        this.dueDate = dueDate;
-        this.sprint = sprint;
-        this.status = status;
-    }
-
-    public String getSprintName() {
-        return sprintName;
-    }
-
-    public void setSprintName(String sprintName) {
-        this.sprintName = sprintName;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -71,12 +36,12 @@ public class TaskResponseDTO {
         this.priority = priority;
     }
 
-    public String getAssigneeName() {
-        return assigneeName;
+    public String getAssignee() {
+        return assignee;
     }
 
-    public void setAssigneeName(String assigneeName) {
-        this.assigneeName = assigneeName;
+    public void setAssignee(String assignee) {
+        this.assignee = assignee;
     }
 
     public LocalDate getDeliveryDate() {
@@ -111,4 +76,3 @@ public class TaskResponseDTO {
         this.status = status;
     }
 }
-

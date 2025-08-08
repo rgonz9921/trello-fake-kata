@@ -32,7 +32,7 @@ public class SecurityConfig {
                         .requestMatchers("/v1/auth/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/v1/users").permitAll()
                         //login
-                        .requestMatchers(HttpMethod.POST, "/v1/task").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers(HttpMethod.POST, "/v1/tasks").hasAnyRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

@@ -1,11 +1,15 @@
 package com.kata.trello_fake_kata.infraestructure.controller;
 
+import com.kata.trello_fake_kata.domain.dto.CreateTaskDTO;
 import com.kata.trello_fake_kata.domain.dto.PagedResponse;
 import com.kata.trello_fake_kata.domain.dto.TaskResponseDTO;
 import com.kata.trello_fake_kata.domain.model.Task;
+import com.kata.trello_fake_kata.domain.service.CustomUserDetailsServiceImpl;
 import com.kata.trello_fake_kata.domain.service.ITaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.logging.Logger;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -13,6 +17,8 @@ import org.springframework.web.bind.annotation.*;
 public class TaskController {
     @Autowired
     private ITaskService taskService;
+
+    private static final Logger logger = Logger.getLogger(TaskController.class.getName());
 
     @GetMapping
     public PagedResponse<TaskResponseDTO> getAllTasks(
@@ -22,7 +28,8 @@ public class TaskController {
     }
 
     @PostMapping
-    public Task createTask(@RequestBody Task task) {
+    public Task createTask(@RequestBody CreateTaskDTO task) {
+        logger.info("Tarea a crear: " + task);
         return taskService.createTask(task);
     }
 
